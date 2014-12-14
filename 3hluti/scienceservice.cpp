@@ -20,8 +20,8 @@ std::list<Scientist> ScienceService::getScientistsOrderedBy(std::string col, std
     return sqlscientist.list(col,mod);
 }
 
-std::list<Scientist> ScienceService::searchScientist(std::string searchTerm, std::string ShowComp) {
-    return sqlscientist.searchScientist(searchTerm, ShowComp);
+std::list<Scientist> ScienceService::searchScientist(std::string searchTerm) {
+    return sqlscientist.searchScientist(searchTerm);
 }
 
 void ScienceService::open(){
@@ -40,8 +40,8 @@ std::list<Computer> ScienceService::getComputersOrderedBy(std::string col, std::
     return sqlcomputer.list(col, mod);
 }
 
-std::list<Computer>  ScienceService::searchComputer(std::string searchTerm, std::string ShowComp){
-   return sqlcomputer.searchComputer(searchTerm, ShowComp);
+std::list<Computer>  ScienceService::searchComputer(std::string searchTerm){
+   return sqlcomputer.searchComputer(searchTerm);
 }
 
 void ScienceService::connect(std::string sID, std::string cID){

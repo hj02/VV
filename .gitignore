@@ -5,8 +5,16 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# Build mappan
+build-3hluti-Desktop_Qt_Qt_Version_MinGW_32bit-Debug/
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+
+# build mappan
+build/
+
 
 # Windows Installer files
 *.cab

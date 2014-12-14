@@ -33,12 +33,11 @@ void SqlComputer::addComputer(Computer c){
     query.exec();
 }
 
-std::list<Computer> SqlComputer::searchComputer(std::string searchTerm, std::string ShowComp){
+std::list<Computer> SqlComputer::searchComputer(std::string searchTerm){
 
     QSqlQuery query;
     searchTerm = "%" + searchTerm + "%";
-    if(ShowComp == "n")
-    {
+
         std::list<Computer> computer = std::list<Computer>();
         query.prepare("select * from Computer where Brand like :estr or Year like :estr or Type like :estr or Built like :estr");
         query.bindValue(":estr", QString::fromStdString(searchTerm));
@@ -56,7 +55,7 @@ std::list<Computer> SqlComputer::searchComputer(std::string searchTerm, std::str
             }
 
         return computer;
-    }
+    /*}
     else{
         std::list<Computer> scientistandcomputer = std::list<Computer>();
         query.prepare("select * from ScientistAndComputer where Brand like :estr or Year like :estr or Type like :estr or Built like :estr");
@@ -84,7 +83,7 @@ std::list<Computer> SqlComputer::searchComputer(std::string searchTerm, std::str
             scientistandcomputer.push_back(t);
         }
         return scientistandcomputer;
-    }
+    }*/
 }
 
 std::list<Computer> SqlComputer::list(std::string col, std::string mod){

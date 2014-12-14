@@ -10,9 +10,9 @@ public:
     ~ScienceService();
     void addScientist(Scientist scientist);
     void addComputer(Computer computer);
-    std::list<Scientist> searchScientist(std::string searchTerm, std::string ShowComp);
+    std::list<Scientist> searchScientist(std::string searchTerm);
     // Returns all scientists that match the searchTerm
-    std::list<Computer>  searchComputer(std::string searchTerm, std::string ShowComp);
+    std::list<Computer>  searchComputer(std::string searchTerm);
     // Returns all scientists that match the searchTerm
     std::list<Scientist> getAllScientists();
     // Returns a list of all the scientists
