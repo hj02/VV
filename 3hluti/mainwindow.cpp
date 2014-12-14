@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::start()
 {
-    //scienceService.open();
+    scienceService.open();
 }
 
 void MainWindow::on_rbFemaleS_clicked()

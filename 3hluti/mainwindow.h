@@ -20,6 +20,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void start();
 
 private slots:
 
@@ -29,9 +30,10 @@ private slots:
     void on_pbAddS_clicked();
     void on_pbAddC_clicked();
 
+
 private:
     Ui::MainWindow *ui;
-    void start();
+
     ScienceService scienceService;
 };
 
