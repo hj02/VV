@@ -33,6 +33,8 @@ private slots:
 
     void on_Searchbutton_clicked();
 
+    void on_TxtSearchTerm_returnPressed();
+
 private:
     Ui::MainWindow *ui;
 

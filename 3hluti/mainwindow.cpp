@@ -204,3 +204,8 @@ void MainWindow::on_Searchbutton_clicked()
           }
     }
 }
+
+void MainWindow::on_TxtSearchTerm_returnPressed()
+{
+    on_Searchbutton_clicked();
+}
