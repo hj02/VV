@@ -35,6 +35,10 @@ private slots:
 
     void on_TxtSearchTerm_returnPressed();
 
+    void on_pbSortS_clicked();
+
+    void on_pbSortC_clicked();
+
 private:
     Ui::MainWindow *ui;
 

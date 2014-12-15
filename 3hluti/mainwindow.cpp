@@ -209,3 +209,121 @@ void MainWindow::on_TxtSearchTerm_returnPressed()
 {
     on_Searchbutton_clicked();
 }
+
+void MainWindow::on_pbSortS_clicked()
+{
+    std::string col = "";
+
+    switch (ui->cmbScientist->currentIndex()){
+
+    case 0:
+        col = "name";
+        break;
+    case 1:
+        col = "dob";
+        break;
+    case 2:
+        col="dod";
+        break;
+    case 3:
+        col="gender";
+        break;
+
+    }
+
+    std::string mod = "";
+    if(ui->rbAscS->isChecked()){
+        mod = "asc";
+    }
+    if(ui->rbDescS->isChecked()){
+        mod = "desc";
+    }
+
+    ui->tableScientist->setHorizontalHeaderItem(0,new QTableWidgetItem("Name"));
+    ui->tableScientist->setHorizontalHeaderItem(1,new QTableWidgetItem("Gender"));
+    ui->tableScientist->setHorizontalHeaderItem(2,new QTableWidgetItem("Date of birth"));
+    ui->tableScientist->setHorizontalHeaderItem(3,new QTableWidgetItem("Date of death?"));
+
+    std::list<Scientist> s = scienceService.getScientistsOrderedBy(col,mod);
+
+    int rowSize = s.size();
+    ui->tableScientist->setRowCount(rowSize);
+    ui->tableScientist->setColumnCount(4);
+
+
+    int currentRow = 0;
+
+    for(std::list<Scientist>::iterator iter = s.begin(); iter != s.end(); iter ++){
+
+        QString name = QString::fromStdString(iter->name);
+        QString gender = QString::fromStdString(iter->gender);
+        QString dob = QString::fromStdString(iter->dateOfBirth);
+        QString dod = QString::fromStdString(iter->dateOfDeath);
+
+        ui->tableScientist ->setItem(currentRow, 0, new QTableWidgetItem(name));
+        ui->tableScientist->setItem(currentRow, 1, new QTableWidgetItem(gender));
+        ui->tableScientist->setItem(currentRow, 2, new QTableWidgetItem(dob));
+        ui->tableScientist->setItem(currentRow, 3, new QTableWidgetItem(dod));
+        currentRow++;
+
+    }
+}
+
+
+void MainWindow::on_pbSortC_clicked()
+{
+    std::string col = "";
+    switch (ui->cmbComputers->currentIndex()){
+
+    case 0:
+        col = "brand";
+        break;
+    case 1:
+        col = "type";
+        break;
+    case 2:
+        col="year";
+        break;
+    case 3:
+        col="built";
+        break;
+
+    }
+
+    std::string mod = "";
+    if(ui->rbAscC->isChecked()){
+        mod = "asc";
+    }
+    if(ui->rbDescC->isChecked()){
+        mod = "desc";
+    }
+
+    ui->tableComputer->setHorizontalHeaderItem(0,new QTableWidgetItem("Brand"));
+    ui->tableComputer->setHorizontalHeaderItem(1,new QTableWidgetItem("Year"));
+    ui->tableComputer->setHorizontalHeaderItem(2,new QTableWidgetItem("Type"));
+    ui->tableComputer->setHorizontalHeaderItem(3,new QTableWidgetItem("Built?"));
+
+    std::list<Computer> c = scienceService.getComputersOrderedBy(col,mod);
+
+    int rowSize = c.size();
+    ui->tableComputer->setRowCount(rowSize);
+    ui->tableComputer->setColumnCount(4);
+
+
+    int currentRow = 0;
+
+    for(std::list<Computer>::iterator iter = c.begin(); iter != c.end(); iter ++){
+
+        QString brand = QString::fromStdString(iter->brand);
+        QString year = QString::fromStdString(iter->year);
+        QString type = QString::fromStdString(iter->type);
+        QString built = QString::fromStdString(iter->built);
+
+        ui->tableComputer ->setItem(currentRow, 0, new QTableWidgetItem(brand));
+        ui->tableComputer->setItem(currentRow, 1, new QTableWidgetItem(year));
+        ui->tableComputer->setItem(currentRow, 2, new QTableWidgetItem(type));
+        ui->tableComputer->setItem(currentRow, 3, new QTableWidgetItem(built));
+        currentRow++;
+
+    }
+}

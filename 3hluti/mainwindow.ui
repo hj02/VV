@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -116,7 +116,7 @@
       <property name="title">
        <string>Sort by</string>
       </property>
-      <widget class="QComboBox" name="cmbSortS">
+      <widget class="QComboBox" name="cmbScientist">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -541,7 +541,7 @@
        <string>Add a new Computer</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tableComputer">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -581,7 +581,7 @@
      <zorder>lblYear</zorder>
      <zorder>pbAddC</zorder>
      <zorder>grpSortC</zorder>
-     <zorder>tableWidget</zorder>
+     <zorder>tableComputer</zorder>
     </widget>
     <widget class="QWidget" name="tbConnect">
      <attribute name="title">
@@ -1021,7 +1021,7 @@
      <x>0</x>
      <y>0</y>
      <width>620</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1116,7 +1116,7 @@
   <tabstop>rbMaleS</tabstop>
   <tabstop>rbBothS</tabstop>
   <tabstop>pbAddS</tabstop>
-  <tabstop>cmbSortS</tabstop>
+  <tabstop>cmbScientist</tabstop>
   <tabstop>rbAscS</tabstop>
   <tabstop>rbDescS</tabstop>
   <tabstop>pbSortS</tabstop>
