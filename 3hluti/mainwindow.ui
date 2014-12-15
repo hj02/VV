@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -89,16 +89,6 @@
       </property>
       <property name="inputMask">
        <string/>
-      </property>
-     </widget>
-     <widget class="QColumnView" name="colScientists">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>180</y>
-        <width>561</width>
-        <height>351</height>
-       </rect>
       </property>
      </widget>
      <widget class="QPushButton" name="pbAddS">
@@ -304,16 +294,46 @@
        </property>
       </widget>
      </widget>
+     <widget class="QTableWidget" name="tableScientist">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>561</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date of birth</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date of death</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Gender</string>
+       </property>
+      </column>
+     </widget>
      <zorder>groupBox</zorder>
      <zorder>lblDodS</zorder>
      <zorder>lblNameS</zorder>
      <zorder>lblDobS</zorder>
      <zorder>edtNameS</zorder>
-     <zorder>colScientists</zorder>
      <zorder>pbAddS</zorder>
      <zorder>grbSortS</zorder>
      <zorder>edtDobS</zorder>
      <zorder>edtDodS</zorder>
+     <zorder>tableScientist</zorder>
     </widget>
     <widget class="QWidget" name="tbComputers_2">
      <attribute name="title">
@@ -402,16 +422,6 @@
       </property>
       <property name="text">
        <string>Year:</string>
-      </property>
-     </widget>
-     <widget class="QColumnView" name="colComputers">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>180</y>
-        <width>561</width>
-        <height>351</height>
-       </rect>
       </property>
      </widget>
      <widget class="QPushButton" name="pbAddC">
@@ -531,6 +541,36 @@
        <string>Add a new Computer</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>561</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Brand</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Built</string>
+       </property>
+      </column>
+     </widget>
      <zorder>groupBox_3</zorder>
      <zorder>lblBrand</zorder>
      <zorder>edtBrand</zorder>
@@ -539,9 +579,9 @@
      <zorder>edtType</zorder>
      <zorder>checkBox_2</zorder>
      <zorder>lblYear</zorder>
-     <zorder>colComputers</zorder>
      <zorder>pbAddC</zorder>
      <zorder>grpSortC</zorder>
+     <zorder>tableWidget</zorder>
     </widget>
     <widget class="QWidget" name="tbConnect">
      <attribute name="title">
@@ -932,10 +972,10 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>25</x>
-        <y>171</y>
-        <width>551</width>
-        <height>361</height>
+        <x>20</x>
+        <y>180</y>
+        <width>561</width>
+        <height>351</height>
        </rect>
       </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
@@ -964,7 +1004,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Date of date</string>
+        <string>Date of death</string>
        </property>
       </column>
      </widget>
@@ -981,7 +1021,7 @@
      <x>0</x>
      <y>0</y>
      <width>620</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1080,7 +1120,6 @@
   <tabstop>rbAscS</tabstop>
   <tabstop>rbDescS</tabstop>
   <tabstop>pbSortS</tabstop>
-  <tabstop>colScientists</tabstop>
   <tabstop>edtBrand</tabstop>
   <tabstop>edtType</tabstop>
   <tabstop>edtYear</tabstop>
@@ -1089,7 +1128,6 @@
   <tabstop>cmbComputers</tabstop>
   <tabstop>rbAscC</tabstop>
   <tabstop>rbDescC</tabstop>
-  <tabstop>colComputers</tabstop>
   <tabstop>pbSortC</tabstop>
  </tabstops>
  <resources/>
