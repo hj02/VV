@@ -132,3 +132,26 @@ void SqlComputer::deleteComputer(std::string id){
     query.exec(qstr);
 
 }
+
+std::list<Computer> SqlComputer::showconnection(){
+
+    QSqlQuery query;
+    std::list<Computer> scientistandcomputer = std::list<Computer>();
+    query.prepare("select * from ScientistAndComputer");
+    query.exec();
+    Computer t = Computer();
+
+    while(query.next()){
+        if(query.value("Name")!= "" && query.value("Brand")!= "" ){
+
+            t.cID = query.value("c_ID").toInt();
+            t.sID = query.value("s_ID").toInt();
+            t.name = query.value("Name").toString().toStdString();
+            t.brand = query.value("Brand").toString().toStdString();
+            scientistandcomputer.push_back(t);
+
+        }
+   }
+
+    return scientistandcomputer;
+}

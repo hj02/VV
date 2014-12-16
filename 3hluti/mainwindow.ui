@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -595,6 +595,15 @@
         <height>351</height>
        </rect>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
        <number>130</number>
       </attribute>
@@ -814,6 +823,12 @@
         <width>551</width>
         <height>341</height>
        </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

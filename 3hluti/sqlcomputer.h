@@ -14,6 +14,7 @@ public:
     std::list<Computer> searchComputer(std::string searchTerm);
     void connect(std::string scientist, std::string computer);
     void deleteComputer(std::string id);
+    std::list<Computer> showconnection();
 
 
 };
