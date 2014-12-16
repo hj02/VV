@@ -24,26 +24,23 @@ public:
 
 private slots:
 
-   /* void on_rbFemaleS_clicked();
-    void on_rbMaleS_clicked();*/
     void on_rbAliveS_clicked();
-    void on_pbAddS_clicked();
-    void on_pbAddC_clicked();
-    void on_pushButtonSearch_clicked();
-
-    void on_Searchbutton_clicked();
-
-    void on_TxtSearchTerm_returnPressed();
-
-    void on_pbSortS_clicked();
-
-    void on_pbSortC_clicked();
-
+    void on_btnAddScientist_clicked();
+    void on_btnAddComputer_clicked();
+    void on_btnSearchFind_clicked();
+    void on_edtSearchTerm_returnPressed();
+    void on_btnSortScientist_clicked();
+    void on_btnSortComputer_clicked();
     bool yearTrue(std::string year);
     void firstToUpper(std::string& finding);
     void toLower(std::string& str);
     bool dateTrue(std::string date);
+    void on_tbFind_tabBarClicked(int index);
+    void on_btnClearFind_clicked();
+    void on_btnClearComputer_clicked();
+    void on_btnClearScientist_clicked();
 
+    void on_btnClearConnect_clicked();
 
 private:
     Ui::MainWindow *ui;

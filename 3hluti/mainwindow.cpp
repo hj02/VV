@@ -21,16 +21,6 @@ void MainWindow::start()
     scienceService.open();
 }
 
-/*void MainWindow::on_rbFemaleS_clicked()
-{
-    ui->pbAddS->setEnabled(true);
-}
-
-void MainWindow::on_rbMaleS_clicked()
-{
-    ui->pbAddS->setEnabled(true);
-}*/
-
 void MainWindow::on_rbAliveS_clicked()
 {
   if(ui->rbAliveS->isChecked())
@@ -38,16 +28,14 @@ void MainWindow::on_rbAliveS_clicked()
   else ui->edtDodS->setEnabled(true);
 }
 
-
-void MainWindow::on_pbAddS_clicked()
+void MainWindow::on_btnAddScientist_clicked()
 {
     Scientist additionalScientist = Scientist();
     std::string format = "";
     std::string format2= "";
     QString strformat(format.c_str());
     QString strformat2(format2.c_str());
-    ui->errormsgS->setText(strformat);
-    ui->errormsg2S->setText(strformat2);
+    ui->statusBar->showMessage(strformat+ "  "+strformat2);
 
     std::string NAME = "";
     NAME = ui->edtNameS->text().toStdString();
@@ -82,35 +70,34 @@ void MainWindow::on_pbAddS_clicked()
     additionalScientist.gender=GENDER;
 
     if(NAME==""){
-        format = "Please insert the name.";
+
+        format = "Please insert the name";
         QString strformat(format.c_str());
-        ui->errormsgS->setText(strformat);
+        ui->statusBar->showMessage(strformat);
+
     }else if(!dateTrue(DOB) || (!dateTrue(DOD) && DOD!="Alive")){
 
         format = "The format of date must be:";
         format2 = "yyyy-mm-dd";
         QString strformat(format.c_str());
         QString strformat2(format2.c_str());
-        ui->errormsgS->setText(strformat);
-        ui->errormsg2S->setText(strformat2);
+        ui->statusBar->showMessage(strformat+"  "+strformat2);
 
     }else{
           scienceService.addScientist(additionalScientist);
           ui->edtNameS->clear();
           ui->edtDobS->clear();
           ui->edtDodS->clear();
-          ui->errormsgS->clear();
-          ui->errormsg2S->clear();
-
+          ui->statusBar->clearMessage();
     }
 }
 
-void MainWindow::on_pbAddC_clicked()
+void MainWindow::on_btnAddComputer_clicked()
 {
     Computer additionalComputer = Computer();
     std::string format = "";
     QString strformat(format.c_str());
-    ui->errormsgC->setText(strformat);
+    ui->statusBar->showMessage(strformat);
 
     std::string BRAND = "";
     BRAND = ui->edtBrand->text().toStdString();
@@ -136,40 +123,38 @@ void MainWindow::on_pbAddC_clicked()
     additionalComputer.built = BUILT;
 
     if(BRAND==""){
-        format = "Please insert the brand.";
+        format = "Please insert the brand";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
+
     }else if(TYPE==""){
 
-        format = "Please insert the type.";
+        format = "Please insert the type";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
 
     }else if(!yearTrue(YEAR)){
 
         format = "The format of year must be yyyy";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
 
     }else{
           scienceService.addComputer(additionalComputer);
           ui->edtBrand->clear();
           ui->edtType->clear();
           ui->edtYear->clear();
-          ui->errormsgC->clear();
-
+          ui->statusBar->clearMessage();
     }
 }
 
-
-
-void MainWindow::on_Searchbutton_clicked()
+void MainWindow::on_btnSearchFind_clicked()
 {
     std::string mnot = "";
     QString result(mnot.c_str());
-    ui->prufasearch->setText(result);
+    ui->statusBar->showMessage(result);
 
-    std::string searchTerm = ui->TxtSearchTerm->text().toStdString();
+    std::string searchTerm = ui->edtSearchTerm->text().toStdString();
     if(ui->radioBScientist->isChecked()){
         ui->SearchShowlist->setHorizontalHeaderItem(0,new QTableWidgetItem("Name"));
         ui->SearchShowlist->setHorizontalHeaderItem(1,new QTableWidgetItem("Gender"));
@@ -202,9 +187,8 @@ void MainWindow::on_Searchbutton_clicked()
         else{
           std::string mnot = "No scientist found!";
           QString result(mnot.c_str());
-          ui->prufasearch->setText(result);
+          ui->statusBar->showMessage(result);
           }
-
     }
     else{
         ui->SearchShowlist->setHorizontalHeaderItem(0,new QTableWidgetItem("Brand"));
@@ -238,17 +222,17 @@ void MainWindow::on_Searchbutton_clicked()
         else{
           std::string mnot = "No computer found!";
           QString result(mnot.c_str());
-          ui->prufasearch->setText(result);
+          ui->statusBar->showMessage(result);
           }
     }
 }
 
-void MainWindow::on_TxtSearchTerm_returnPressed()
+void MainWindow::on_edtSearchTerm_returnPressed()
 {
-    on_Searchbutton_clicked();
+    on_btnSearchFind_clicked();
 }
 
-void MainWindow::on_pbSortS_clicked()
+void MainWindow::on_btnSortScientist_clicked()
 {
     std::string col = "";
 
@@ -266,7 +250,6 @@ void MainWindow::on_pbSortS_clicked()
     case 3:
         col="gender";
         break;
-
     }
 
     std::string mod = "";
@@ -288,7 +271,6 @@ void MainWindow::on_pbSortS_clicked()
     ui->tableScientist->setRowCount(rowSize);
     ui->tableScientist->setColumnCount(4);
 
-
     int currentRow = 0;
 
     for(std::list<Scientist>::iterator iter = s.begin(); iter != s.end(); iter ++){
@@ -303,12 +285,10 @@ void MainWindow::on_pbSortS_clicked()
         ui->tableScientist->setItem(currentRow, 2, new QTableWidgetItem(dob));
         ui->tableScientist->setItem(currentRow, 3, new QTableWidgetItem(dod));
         currentRow++;
-
     }
 }
 
-
-void MainWindow::on_pbSortC_clicked()
+void MainWindow::on_btnSortComputer_clicked()
 {
     std::string col = "";
     switch (ui->cmbComputers->currentIndex()){
@@ -325,7 +305,6 @@ void MainWindow::on_pbSortC_clicked()
     case 3:
         col="built";
         break;
-
     }
 
     std::string mod = "";
@@ -347,7 +326,6 @@ void MainWindow::on_pbSortC_clicked()
     ui->tableComputer->setRowCount(rowSize);
     ui->tableComputer->setColumnCount(4);
 
-
     int currentRow = 0;
 
     for(std::list<Computer>::iterator iter = c.begin(); iter != c.end(); iter ++){
@@ -362,7 +340,6 @@ void MainWindow::on_pbSortC_clicked()
         ui->tableComputer->setItem(currentRow, 2, new QTableWidgetItem(type));
         ui->tableComputer->setItem(currentRow, 3, new QTableWidgetItem(built));
         currentRow++;
-
     }
 }
 
@@ -440,4 +417,54 @@ bool MainWindow::dateTrue(std::string date){
         }
     }
     return false; // if not every if statement is true then the function returns false
+}
+
+void MainWindow::on_tbFind_tabBarClicked(int index)
+{
+    if(index == 1){
+        ui->edtNameS->clear();
+        ui->edtDobS->clear();
+        ui->edtDodS->clear();
+        ui->statusBar->clearMessage();
+    }else if(index == 2){
+        ui->edtBrand->clear();
+        ui->edtType->clear();
+        ui->edtYear->clear();
+        ui->statusBar->clearMessage();
+    }else if(index == 3){
+        ui->edtScientistID->clear();
+        ui->edtComputerID->clear();
+        ui->statusBar->clearMessage();
+    }else if(index == 4){
+        ui->edtSearchTerm->clear();
+        ui->statusBar->clearMessage();
+    }
+}
+
+void MainWindow::on_btnClearFind_clicked()
+{
+    ui->edtSearchTerm->clear();
+}
+
+void MainWindow::on_btnClearScientist_clicked()
+{
+    ui->edtNameS->clear();
+    ui->edtDobS->clear();
+    ui->edtDodS->clear();
+    ui->statusBar->clearMessage();
+}
+
+void MainWindow::on_btnClearComputer_clicked()
+{
+    ui->edtBrand->clear();
+    ui->edtType->clear();
+    ui->edtYear->clear();
+    ui->statusBar->clearMessage();
+}
+
+void MainWindow::on_btnClearConnect_clicked()
+{
+    ui->edtScientistID->clear();
+    ui->edtComputerID->clear();
+    ui->statusBar->clearMessage();
 }
