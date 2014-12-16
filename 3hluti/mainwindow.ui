@@ -25,10 +25,14 @@
     </property>
     <property name="currentIndex">
 <<<<<<< HEAD
+<<<<<<< HEAD
      <number>3</number>
 =======
      <number>2</number>
 >>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
+=======
+     <number>0</number>
+>>>>>>> b97fb4b1a9a79c3b776f769070afe66ecc34f11c
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -609,6 +613,15 @@
         <height>351</height>
        </rect>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
        <number>130</number>
       </attribute>
@@ -842,6 +855,7 @@
        </rect>
 >>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
       </property>
+<<<<<<< HEAD
       <widget class="QLabel" name="lblInputC">
        <property name="geometry">
         <rect>
@@ -1026,6 +1040,14 @@
         <string>Clear</string>
        </property>
       </widget>
+=======
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+>>>>>>> b97fb4b1a9a79c3b776f769070afe66ecc34f11c
      </widget>
     </widget>
     <widget class="QWidget" name="tab">

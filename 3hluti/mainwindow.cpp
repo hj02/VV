@@ -540,6 +540,7 @@ void MainWindow::on_removebutton_clicked()
     }while(!isspace(str[i]));
 
     scienceService.deleteComputer(id);
+    on_rb_removeC_pressed();
     }
     if(ui->rb_removeS->isChecked()){
         QString qstr = ui->comboBox_remove->currentText();
@@ -551,6 +552,7 @@ void MainWindow::on_removebutton_clicked()
         i++;
         }while(!isspace(str[i]));
         scienceService.deleteScientist(id);
+        on_rb_removeS_pressed();
      }
 }
 
