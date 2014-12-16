@@ -8,6 +8,7 @@ public:
     Computer();
     bool operator==(const Computer& right);
     int cID;
+    int sID;
     std::string brand;
     std::string year;
     std::string type;
