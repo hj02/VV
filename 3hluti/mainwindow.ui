@@ -24,7 +24,19 @@
      </rect>
     </property>
     <property name="currentIndex">
+<<<<<<< HEAD
      <number>4</number>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+     <number>3</number>
+=======
+     <number>2</number>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
+=======
+     <number>0</number>
+>>>>>>> b97fb4b1a9a79c3b776f769070afe66ecc34f11c
+>>>>>>> 82fe28398c02fef5fcc5e003e4b36dadd0708d49
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -83,7 +95,7 @@
        <rect>
         <x>80</x>
         <y>40</y>
-        <width>251</width>
+        <width>270</width>
         <height>22</height>
        </rect>
       </property>
@@ -91,10 +103,10 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pbAddS">
+     <widget class="QPushButton" name="btnAddScientist">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>260</x>
         <y>130</y>
         <width>93</width>
         <height>28</height>
@@ -107,9 +119,9 @@
      <widget class="QGroupBox" name="grbSortS">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>364</x>
         <y>10</y>
-        <width>201</width>
+        <width>211</width>
         <height>161</height>
        </rect>
       </property>
@@ -119,7 +131,7 @@
       <widget class="QComboBox" name="cmbScientist">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>20</x>
          <y>30</y>
          <width>181</width>
          <height>22</height>
@@ -149,7 +161,7 @@
       <widget class="QRadioButton" name="rbAscS">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>20</x>
          <y>80</y>
          <width>95</width>
          <height>20</height>
@@ -165,7 +177,7 @@
       <widget class="QRadioButton" name="rbDescS">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>110</x>
          <y>80</y>
          <width>95</width>
          <height>20</height>
@@ -175,10 +187,10 @@
         <string>Descending</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pbSortS">
+      <widget class="QPushButton" name="btnSortScientist">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>110</x>
          <y>120</y>
          <width>93</width>
          <height>28</height>
@@ -218,9 +230,13 @@
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
+<<<<<<< HEAD
+        <x>20</x>
+=======
         <x>0</x>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
         <y>10</y>
-        <width>351</width>
+        <width>341</width>
         <height>161</height>
        </rect>
       </property>
@@ -258,7 +274,7 @@
       <widget class="QRadioButton" name="rbMaleS">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>270</x>
          <y>60</y>
          <width>60</width>
          <height>20</height>
@@ -272,19 +288,6 @@
        </property>
        <property name="text">
         <string>Male</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="errormsgS">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>171</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
       <widget class="QCheckBox" name="rbAliveS">
@@ -306,17 +309,30 @@
         <string>Alive</string>
        </property>
       </widget>
-      <widget class="QLabel" name="errormsg2S">
+      <widget class="QPushButton" name="btnClearScientist">
        <property name="geometry">
         <rect>
+<<<<<<< HEAD
+         <x>140</x>
+         <y>120</y>
+         <width>93</width>
+         <height>28</height>
+=======
          <x>30</x>
          <y>130</y>
          <width>151</width>
          <height>20</height>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="text">
-        <string/>
+        <string>Clear</string>
        </property>
       </widget>
      </widget>
@@ -325,7 +341,7 @@
        <rect>
         <x>10</x>
         <y>180</y>
-        <width>561</width>
+        <width>555</width>
         <height>351</height>
        </rect>
       </property>
@@ -361,7 +377,7 @@
      <zorder>lblNameS</zorder>
      <zorder>lblDobS</zorder>
      <zorder>edtNameS</zorder>
-     <zorder>pbAddS</zorder>
+     <zorder>btnAddScientist</zorder>
      <zorder>grbSortS</zorder>
      <zorder>edtDobS</zorder>
      <zorder>edtDodS</zorder>
@@ -389,7 +405,7 @@
        <rect>
         <x>80</x>
         <y>40</y>
-        <width>251</width>
+        <width>271</width>
         <height>22</height>
        </rect>
       </property>
@@ -422,7 +438,7 @@
        <rect>
         <x>80</x>
         <y>70</y>
-        <width>251</width>
+        <width>271</width>
         <height>22</height>
        </rect>
       </property>
@@ -456,10 +472,10 @@
        <string>Year:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pbAddC">
+     <widget class="QPushButton" name="btnAddComputer">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>260</x>
         <y>130</y>
         <width>93</width>
         <height>28</height>
@@ -472,9 +488,9 @@
      <widget class="QGroupBox" name="grpSortC">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>364</x>
         <y>10</y>
-        <width>201</width>
+        <width>211</width>
         <height>161</height>
        </rect>
       </property>
@@ -486,7 +502,7 @@
         <rect>
          <x>10</x>
          <y>30</y>
-         <width>181</width>
+         <width>192</width>
          <height>22</height>
         </rect>
        </property>
@@ -530,7 +546,7 @@
       <widget class="QRadioButton" name="rbDescC">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>110</x>
          <y>80</y>
          <width>95</width>
          <height>20</height>
@@ -540,10 +556,10 @@
         <string>Descending</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pbSortC">
+      <widget class="QPushButton" name="btnSortComputer">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>110</x>
          <y>120</y>
          <width>93</width>
          <height>28</height>
@@ -559,7 +575,7 @@
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>351</width>
+        <width>341</width>
         <height>161</height>
        </rect>
       </property>
@@ -572,17 +588,23 @@
       <property name="title">
        <string>Add a new Computer</string>
       </property>
-      <widget class="QLabel" name="errormsgC">
+      <widget class="QPushButton" name="btnClearComputer">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>140</x>
          <y>120</y>
-         <width>201</width>
-         <height>20</height>
+         <width>93</width>
+         <height>28</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="text">
-        <string/>
+        <string>Clear</string>
        </property>
       </widget>
      </widget>
@@ -591,7 +613,7 @@
        <rect>
         <x>20</x>
         <y>180</y>
-        <width>561</width>
+        <width>555</width>
         <height>351</height>
        </rect>
       </property>
@@ -639,7 +661,7 @@
      <zorder>edtType</zorder>
      <zorder>checkBox_2</zorder>
      <zorder>lblYear</zorder>
-     <zorder>pbAddC</zorder>
+     <zorder>btnAddComputer</zorder>
      <zorder>grpSortC</zorder>
      <zorder>tableComputer</zorder>
     </widget>
@@ -647,6 +669,8 @@
      <attribute name="title">
       <string>Connect</string>
      </attribute>
+<<<<<<< HEAD
+=======
      <widget class="QLabel" name="lblConnectSwithC">
       <property name="geometry">
        <rect>
@@ -692,38 +716,13 @@
        <string>with Computer no: </string>
       </property>
      </widget>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
      <widget class="QLabel" name="lblScientist_connect">
       <property name="geometry">
        <rect>
         <x>240</x>
         <y>170</y>
         <width>21</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblScientistComputer">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>150</y>
-        <width>221</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>You have now connected Scientist no: </string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblComputer_no1">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>150</y>
-        <width>30</width>
         <height>16</height>
        </rect>
       </property>
@@ -744,6 +743,35 @@
        <string/>
       </property>
      </widget>
+<<<<<<< HEAD
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>555</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Scientist</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Computer</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QGroupBox" name="grbConnect">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>555</width>
+        <height>161</height>
+=======
      <widget class="QLabel" name="lblScientist_no1">
       <property name="geometry">
        <rect>
@@ -784,6 +812,7 @@
         <y>70</y>
         <width>111</width>
         <height>20</height>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
        </rect>
       </property>
       <property name="font">
@@ -791,6 +820,11 @@
         <weight>75</weight>
         <bold>true</bold>
        </font>
+<<<<<<< HEAD
+      </property>
+      <property name="title">
+       <string>Connect a Scientist with a Computer</string>
+=======
       </property>
       <property name="text">
        <string>Choose a scientist:</string>
@@ -823,13 +857,210 @@
         <width>551</width>
         <height>341</height>
        </rect>
+>>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
       </property>
+<<<<<<< HEAD
+      <widget class="QLabel" name="lblInputC">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>130</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Input the Computer ID:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnConnect">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>80</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblScientistComputer">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>221</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>You have now connected Scientist no: </string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="edtComputerID">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>80</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblComputer_no1">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>130</y>
+         <width>30</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblScientist_no1">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>130</y>
+         <width>30</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="edtScientistID">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>40</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblInputS">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>130</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Input the Scientist ID:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblComputern_no1">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>130</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>with Computer no: </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnClearConnect">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>80</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+=======
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+<<<<<<< HEAD
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
       </property>
       <property name="sortingEnabled">
        <bool>true</bool>
       </property>
+=======
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+>>>>>>> b97fb4b1a9a79c3b776f769070afe66ecc34f11c
+>>>>>>> 82fe28398c02fef5fcc5e003e4b36dadd0708d49
      </widget>
     </widget>
     <widget class="QWidget" name="tab">
@@ -849,12 +1080,12 @@
        <string>Search term:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="TxtSearchTerm">
+     <widget class="QLineEdit" name="edtSearchTerm">
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>70</y>
-        <width>300</width>
+        <y>65</y>
+        <width>450</width>
         <height>22</height>
        </rect>
       </property>
@@ -864,36 +1095,19 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>561</width>
-        <height>141</height>
+        <width>555</width>
+        <height>150</height>
        </rect>
       </property>
-      <property name="title">
-       <string/>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-      <widget class="QLabel" name="lblHeader">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>561</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Find a Scientist or a Computer</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
+      <property name="title">
+       <string>Find a Scientist or a Computer</string>
+      </property>
       <widget class="QRadioButton" name="radioBScientist">
        <property name="geometry">
         <rect>
@@ -902,6 +1116,12 @@
          <width>95</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="text">
         <string>Scientist</string>
@@ -919,18 +1139,30 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Computer</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Searchbutton">
+      <widget class="QPushButton" name="btnSearchFind">
        <property name="geometry">
         <rect>
-         <x>414</x>
+         <x>448</x>
          <y>100</y>
-         <width>91</width>
-         <height>31</height>
+         <width>93</width>
+         <height>28</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="text">
         <string>Search</string>
@@ -949,6 +1181,25 @@
         <string/>
        </property>
       </widget>
+      <widget class="QPushButton" name="btnClearFind">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>100</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QTableWidget" name="SearchShowlist">
       <property name="enabled">
@@ -958,7 +1209,7 @@
        <rect>
         <x>20</x>
         <y>180</y>
-        <width>561</width>
+        <width>555</width>
         <height>351</height>
        </rect>
       </property>
@@ -994,7 +1245,7 @@
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>label</zorder>
-     <zorder>TxtSearchTerm</zorder>
+     <zorder>edtSearchTerm</zorder>
      <zorder>SearchShowlist</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -1086,7 +1337,7 @@
      <x>0</x>
      <y>0</y>
      <width>620</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1125,14 +1376,6 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuHelp"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionScientist">
@@ -1179,20 +1422,36 @@
   <tabstop>edtDodS</tabstop>
   <tabstop>rbFemaleS</tabstop>
   <tabstop>rbMaleS</tabstop>
-  <tabstop>pbAddS</tabstop>
+  <tabstop>rbAliveS</tabstop>
+  <tabstop>btnAddScientist</tabstop>
+  <tabstop>btnClearScientist</tabstop>
   <tabstop>cmbScientist</tabstop>
   <tabstop>rbAscS</tabstop>
   <tabstop>rbDescS</tabstop>
-  <tabstop>pbSortS</tabstop>
+  <tabstop>btnSortScientist</tabstop>
+  <tabstop>tableScientist</tabstop>
   <tabstop>edtBrand</tabstop>
   <tabstop>edtType</tabstop>
   <tabstop>edtYear</tabstop>
   <tabstop>checkBox_2</tabstop>
-  <tabstop>pbAddC</tabstop>
+  <tabstop>btnAddComputer</tabstop>
+  <tabstop>btnClearComputer</tabstop>
   <tabstop>cmbComputers</tabstop>
   <tabstop>rbAscC</tabstop>
   <tabstop>rbDescC</tabstop>
-  <tabstop>pbSortC</tabstop>
+  <tabstop>btnSortComputer</tabstop>
+  <tabstop>tableComputer</tabstop>
+  <tabstop>edtScientistID</tabstop>
+  <tabstop>edtComputerID</tabstop>
+  <tabstop>btnConnect</tabstop>
+  <tabstop>btnClearConnect</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>edtSearchTerm</tabstop>
+  <tabstop>radioBScientist</tabstop>
+  <tabstop>radioBComputer</tabstop>
+  <tabstop>btnSearchFind</tabstop>
+  <tabstop>btnClearFind</tabstop>
+  <tabstop>SearchShowlist</tabstop>
  </tabstops>
  <resources/>
  <connections/>
