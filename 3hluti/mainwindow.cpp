@@ -23,10 +23,6 @@ void MainWindow::start()
     on_rb_removeS_pressed();
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
 void MainWindow::on_rbAliveS_clicked()
 {
   if(ui->rbAliveS->isChecked())
@@ -425,7 +421,6 @@ bool MainWindow::dateTrue(std::string date){
     return false; // if not every if statement is true then the function returns false
 }
 
-<<<<<<< HEAD
 void MainWindow::on_tbFind_tabBarClicked(int index)
 {
     if(index == 1){
@@ -474,9 +469,8 @@ void MainWindow::on_btnClearConnect_clicked()
     ui->edtScientistID->clear();
     ui->edtComputerID->clear();
     ui->statusBar->clearMessage();
-=======
-void MainWindow::fillComboBox(){
 
+void MainWindow::fillComboBox(){
 
         std::list<Scientist> sc = scienceService.searchScientist("");
 
@@ -558,8 +552,6 @@ void MainWindow::on_removebutton_clicked()
 
 void MainWindow::on_connectbutton_clicked()
 {
-
-
     QString qstrS = ui->comboBox_SID->currentText();
     std::string strS = qstrS.toStdString();
 
@@ -569,7 +561,6 @@ void MainWindow::on_connectbutton_clicked()
        idS=idS+strS[j];
     j++;
     }while(!isspace(strS[j]));
-
 
     QString qstrC = ui->comboBox_CID->currentText();
     std::string strC = qstrC.toStdString();
@@ -585,5 +576,4 @@ void MainWindow::on_connectbutton_clicked()
 
     ui->lblScientist_no1->setText(QString::fromStdString(idS));
     ui->lblComputer_no1->setText(QString::fromStdString(idC));
->>>>>>> 183ba7da12f4b68be8ab4ecbd0cd8e5d9533130d
 }
