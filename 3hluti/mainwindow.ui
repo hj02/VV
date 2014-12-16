@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -218,7 +218,7 @@
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>10</y>
         <width>351</width>
         <height>161</height>
@@ -274,13 +274,26 @@
         <string>Male</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="rbBothS">
+      <widget class="QLabel" name="errormsgS">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="rbAliveS">
        <property name="geometry">
         <rect>
          <x>180</x>
          <y>90</y>
          <width>70</width>
-         <height>20</height>
+         <height>17</height>
         </rect>
        </property>
        <property name="font">
@@ -290,7 +303,20 @@
         </font>
        </property>
        <property name="text">
-        <string>Both</string>
+        <string>Alive</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="errormsg2S">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>140</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>
@@ -540,6 +566,19 @@
       <property name="title">
        <string>Add a new Computer</string>
       </property>
+      <widget class="QLabel" name="errormsgC">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QTableWidget" name="tableComputer">
       <property name="geometry">
@@ -1114,7 +1153,6 @@
   <tabstop>edtDodS</tabstop>
   <tabstop>rbFemaleS</tabstop>
   <tabstop>rbMaleS</tabstop>
-  <tabstop>rbBothS</tabstop>
   <tabstop>pbAddS</tabstop>
   <tabstop>cmbScientist</tabstop>
   <tabstop>rbAscS</tabstop>

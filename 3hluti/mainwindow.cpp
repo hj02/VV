@@ -21,7 +21,7 @@ void MainWindow::start()
     scienceService.open();
 }
 
-void MainWindow::on_rbFemaleS_clicked()
+/*void MainWindow::on_rbFemaleS_clicked()
 {
     ui->pbAddS->setEnabled(true);
 }
@@ -29,19 +29,30 @@ void MainWindow::on_rbFemaleS_clicked()
 void MainWindow::on_rbMaleS_clicked()
 {
     ui->pbAddS->setEnabled(true);
+}*/
+
+void MainWindow::on_rbAliveS_clicked()
+{
+  if(ui->rbAliveS->isChecked())
+    ui->edtDodS->setEnabled(false);
+  else ui->edtDodS->setEnabled(true);
 }
 
-void MainWindow::on_rbBothS_clicked()
-{
-  ui->pbAddS->setEnabled(false);
-}
 
 void MainWindow::on_pbAddS_clicked()
 {
     Scientist additionalScientist = Scientist();
+    std::string format = "";
+    std::string format2= "";
+    QString strformat(format.c_str());
+    QString strformat2(format2.c_str());
+    ui->errormsgS->setText(strformat);
+    ui->errormsg2S->setText(strformat2);
 
     std::string NAME = "";
     NAME = ui->edtNameS->text().toStdString();
+    toLower(NAME);
+    firstToUpper(NAME);
     additionalScientist.name = NAME;
 
     std::string DOB = "";
@@ -49,36 +60,68 @@ void MainWindow::on_pbAddS_clicked()
     additionalScientist.dateOfBirth = DOB;
 
     std::string DOD = "";
-    DOD = ui->edtDodS->text().toStdString();
+    if(ui->rbAliveS->isChecked()){
+
+        DOD="Alive";
+
+    }else{
+
+        DOD = ui->edtDodS->text().toStdString();
+    }
+
     additionalScientist.dateOfDeath = DOD;
 
     std::string GENDER;
     if(ui->rbFemaleS){
-        GENDER = "Female";
-    }else GENDER = "Male";
+        GENDER = "female";
+    }else GENDER = "male";
 
     if(ui->rbMaleS){
-        GENDER = "Male";
-    }else GENDER = "Female";
+        GENDER = "male";
+    }else GENDER = "female";
     additionalScientist.gender=GENDER;
 
-    scienceService.addScientist(additionalScientist);
+    if(NAME==""){
+        format = "Please insert the name.";
+        QString strformat(format.c_str());
+        ui->errormsgS->setText(strformat);
+    }else if(!dateTrue(DOB) || (!dateTrue(DOD) && DOD!="Alive")){
 
-    ui->edtNameS->clear();
-    ui->edtDobS->clear();
-    ui->edtDodS->clear();
+        format = "The format of date must be:";
+        format2 = "yyyy-mm-dd";
+        QString strformat(format.c_str());
+        QString strformat2(format2.c_str());
+        ui->errormsgS->setText(strformat);
+        ui->errormsg2S->setText(strformat2);
+
+    }else{
+          scienceService.addScientist(additionalScientist);
+          ui->edtNameS->clear();
+          ui->edtDobS->clear();
+          ui->edtDodS->clear();
+          ui->errormsgS->clear();
+          ui->errormsg2S->clear();
+
+    }
 }
 
 void MainWindow::on_pbAddC_clicked()
 {
     Computer additionalComputer = Computer();
+    std::string format = "";
+    QString strformat(format.c_str());
+    ui->errormsgC->setText(strformat);
 
     std::string BRAND = "";
     BRAND = ui->edtBrand->text().toStdString();
+    toLower(BRAND);
+    firstToUpper(BRAND);
     additionalComputer.brand = BRAND;
 
     std::string TYPE = "";
     TYPE = ui->edtType->text().toStdString();
+    toLower(TYPE);
+    firstToUpper(TYPE);
     additionalComputer.type = TYPE;
 
     std::string YEAR = "";
@@ -88,40 +131,35 @@ void MainWindow::on_pbAddC_clicked()
     std::string BUILT;
 
     if(ui->checkBox_2){
-        BUILT = "Yes";
+    BUILT = "Yes";
     }else BUILT = "No";
     additionalComputer.built = BUILT;
 
-    scienceService.addComputer(additionalComputer);
+    if(BRAND==""){
+        format = "Please insert the brand.";
+        QString strformat(format.c_str());
+        ui->errormsgC->setText(strformat);
+    }else if(TYPE==""){
 
-    ui->edtBrand->clear();
-    ui->edtType->clear();
-    ui->edtYear->clear();
+        format = "Please insert the type.";
+        QString strformat(format.c_str());
+        ui->errormsgC->setText(strformat);
+
+    }else if(!yearTrue(YEAR)){
+
+        format = "The format of year must be yyyy";
+        QString strformat(format.c_str());
+        ui->errormsgC->setText(strformat);
+
+    }else{
+          scienceService.addComputer(additionalComputer);
+          ui->edtBrand->clear();
+          ui->edtType->clear();
+          ui->edtYear->clear();
+          ui->errormsgC->clear();
+
+    }
 }
-
-
-/*
-
-//for(unsigned int i = 0; i < currentCars.size(); ++i)
-//{
-    //std::string searchString = ui->input_search_cars->text().toStdString();
-
-    if(currentCar.contains(searchString))
-    {
-        QString carBrand = QString::fromStdString(currentCar.getBrand());
-        QString carModel = QString::fromStdString(currentCar.getModel());
-        QString carColor = QString::fromStdString(currentCar.getColor());
-
-        int currentRow = currentlyDisplayedCars.size();
-
-        ui->table_cars->setItem(currentRow, 0, new QTableWidgetItem(carBrand));
-        ui->table_cars->setItem(currentRow, 1, new QTableWidgetItem(carModel));
-        ui->table_cars->setItem(currentRow, 2, new QTableWidgetItem(carColor));
-
-        currentlyDisplayedCars.push_back(currentCar);
-//    }
-//}*/
-
 
 
 
@@ -326,4 +364,80 @@ void MainWindow::on_pbSortC_clicked()
         currentRow++;
 
     }
+}
+
+bool MainWindow::yearTrue(std::string year){
+    int SIZE = year.size();
+    if(SIZE == 4)
+    {
+        int T=0;
+        int s = year.size();
+        for(int i=0; i<s; i++){
+            if(isdigit(year[i]))
+                T=1;
+            else {T=0;
+                break;}
+        }
+        if(T==1) return true;
+    }
+    return false;
+}
+
+void MainWindow::toLower(std::string& str){
+    int a = str.size();
+
+    for(int i=0; i<a; i++){
+        str[i]=tolower(str[i]);
+    }
+}
+
+void MainWindow::firstToUpper(std::string& finding){
+
+    int teljari = -1;
+    int lengd = finding.length();
+    finding[0] = toupper(finding[0]);
+
+    for(int i = 0; i < lengd; i++){
+        if(isspace(finding[i])){
+
+            teljari = teljari -1;
+        }
+        if(teljari < -1){
+
+            finding[i+1] = toupper(finding[i+1]);
+            teljari = -1;
+        }
+    }
+}
+
+bool MainWindow::dateTrue(std::string date){
+    int T=0;
+    if(date.size()==10){ // the string must have exactly 10 characters
+
+        for(int i=0; i<4; i++){ // the first four characters must be digits
+
+            if(isdigit(date[i]))
+
+                T=1;
+            else{
+
+                T=0;
+                break;
+            }
+        }
+        if(T==1){
+
+            if(date[4]=='-' && date[7]=='-'){ // 5th and 8th character must be '-'
+
+                if(isdigit(date[5]) && isdigit(date[6])){ // 6th and 7th character must be digits
+
+                    if(isdigit(date[8]) && isdigit(date[9])){ // 9th and 10th characther must be digits
+
+                        return true; //if every if statement is true then the date is in right format and function returns true
+                    }
+                }
+            }
+        }
+    }
+    return false; // if not every if statement is true then the function returns false
 }

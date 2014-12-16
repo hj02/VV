@@ -24,9 +24,9 @@ public:
 
 private slots:
 
-    void on_rbFemaleS_clicked();
-    void on_rbMaleS_clicked();
-    void on_rbBothS_clicked();
+   /* void on_rbFemaleS_clicked();
+    void on_rbMaleS_clicked();*/
+    void on_rbAliveS_clicked();
     void on_pbAddS_clicked();
     void on_pbAddC_clicked();
     void on_pushButtonSearch_clicked();
@@ -38,6 +38,12 @@ private slots:
     void on_pbSortS_clicked();
 
     void on_pbSortC_clicked();
+
+    bool yearTrue(std::string year);
+    void firstToUpper(std::string& finding);
+    void toLower(std::string& str);
+    bool dateTrue(std::string date);
+
 
 private:
     Ui::MainWindow *ui;
