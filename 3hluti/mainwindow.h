@@ -24,12 +24,9 @@ public:
 
 private slots:
 
-   /* void on_rbFemaleS_clicked();
-    void on_rbMaleS_clicked();*/
     void on_rbAliveS_clicked();
     void on_pbAddS_clicked();
     void on_pbAddC_clicked();
-    void on_pushButtonSearch_clicked();
 
     void on_Searchbutton_clicked();
 
@@ -43,7 +40,16 @@ private slots:
     void firstToUpper(std::string& finding);
     void toLower(std::string& str);
     bool dateTrue(std::string date);
+    void fillComboBox();
 
+
+    void on_rb_removeC_pressed();
+
+    void on_rb_removeS_pressed();
+
+    void on_removebutton_clicked();
+
+    void on_connectbutton_clicked();
 
 private:
     Ui::MainWindow *ui;

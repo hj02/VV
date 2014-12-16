@@ -13,6 +13,7 @@ public:
     void addScientist(Scientist s);
     std::list<Scientist> searchScientist(std::string searchTerm);
     void openDatabase();
+    void deleteScientist(std::string id);
 };
 #endif // SQLSCIENTIST_H
 

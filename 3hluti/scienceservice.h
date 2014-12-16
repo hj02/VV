@@ -26,6 +26,8 @@ public:
     // Connentes a computer and a scientist
     void open();
     // Opens database
+    void deleteComputer(std::string id);
+    void deleteScientist(std::string id);
 private:
     SqlScientist sqlscientist;
     SqlComputer sqlcomputer;

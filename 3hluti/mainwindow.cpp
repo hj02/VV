@@ -19,17 +19,10 @@ MainWindow::~MainWindow()
 void MainWindow::start()
 {
     scienceService.open();
+    fillComboBox();
+    on_rb_removeS_pressed();
 }
 
-/*void MainWindow::on_rbFemaleS_clicked()
-{
-    ui->pbAddS->setEnabled(true);
-}
-
-void MainWindow::on_rbMaleS_clicked()
-{
-    ui->pbAddS->setEnabled(true);
-}*/
 
 void MainWindow::on_rbAliveS_clicked()
 {
@@ -440,4 +433,114 @@ bool MainWindow::dateTrue(std::string date){
         }
     }
     return false; // if not every if statement is true then the function returns false
+}
+
+void MainWindow::fillComboBox(){
+
+
+        std::list<Scientist> sc = scienceService.searchScientist("");
+
+        for(std::list<Scientist>::iterator iter = sc.begin(); iter != sc.end(); iter ++){
+
+            QString SID = QString::number(iter->sID);
+            QString name = QString::fromStdString(iter->name);
+            QString sum = SID + "  " + name;
+            ui->comboBox_SID->addItem(sum);
+        }
+
+        std::list<Computer> co = scienceService.searchComputer("");
+
+        for(std::list<Computer>::iterator iter = co.begin(); iter != co.end(); iter ++){
+
+            QString ID = QString::number(iter->cID);
+            QString brand = QString::fromStdString(iter->brand);
+            QString sum = ID + "  " + brand;
+            ui->comboBox_CID->addItem(sum);
+        }
+}
+
+void MainWindow::on_rb_removeC_pressed()
+{
+    ui->comboBox_remove->clear();
+    std::list<Computer> co = scienceService.searchComputer("");
+
+    for(std::list<Computer>::iterator iter = co.begin(); iter != co.end(); iter ++){
+
+        QString ID = QString::number(iter->cID);
+        QString brand = QString::fromStdString(iter->brand);
+        QString sum = ID + "  " + brand;
+        ui->comboBox_remove->addItem(sum);
+    }
+}
+
+void MainWindow::on_rb_removeS_pressed()
+{
+    ui->comboBox_remove->clear();
+    std::list<Scientist> sc = scienceService.searchScientist("");
+
+    for(std::list<Scientist>::iterator iter = sc.begin(); iter != sc.end(); iter ++){
+
+        QString SID = QString::number(iter->sID);
+        QString name = QString::fromStdString(iter->name);
+        QString sum = SID + "  " + name;
+        ui->comboBox_remove->addItem(sum);
+    }
+}
+
+void MainWindow::on_removebutton_clicked()
+{
+    if(ui->rb_removeC->isChecked()){
+    QString qstr = ui->comboBox_remove->currentText();
+    std::string str = qstr.toStdString();
+    std::string id ="";
+    int i=0;
+    do{
+       id=id+str[i];
+     i++;
+    }while(!isspace(str[i]));
+
+    scienceService.deleteComputer(id);
+    }
+    if(ui->rb_removeS->isChecked()){
+        QString qstr = ui->comboBox_remove->currentText();
+        std::string str = qstr.toStdString();
+        std::string id ="";
+        int i=0;
+        do{
+           id=id+str[i];
+        i++;
+        }while(!isspace(str[i]));
+        scienceService.deleteScientist(id);
+     }
+}
+
+void MainWindow::on_connectbutton_clicked()
+{
+
+
+    QString qstrS = ui->comboBox_SID->currentText();
+    std::string strS = qstrS.toStdString();
+
+    std::string idS ="";
+    int j=0;
+    do{
+       idS=idS+strS[j];
+    j++;
+    }while(!isspace(strS[j]));
+
+
+    QString qstrC = ui->comboBox_CID->currentText();
+    std::string strC = qstrC.toStdString();
+
+    std::string idC ="";
+    int i=0;
+    do{
+       idC=idC+strC[i];
+    i++;
+    }while(!isspace(strC[i]));
+
+    scienceService.connect(idS, idC);
+
+    ui->lblScientist_no1->setText(QString::fromStdString(idS));
+    ui->lblComputer_no1->setText(QString::fromStdString(idC));
 }
