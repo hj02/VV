@@ -120,9 +120,15 @@ void SqlComputer::connect(std::string sID, std::string cID){
     QSqlQuery query;
     query.prepare("INSERT INTO Makers (c_ID, s_ID)"
                   "VALUES(:c_ID, :s_ID)");
-    query.bindValue(":c_ID", QString::fromStdString(sID));
-    query.bindValue(":s_ID", QString::fromStdString(cID));
+    query.bindValue(":c_ID", QString::fromStdString(cID));
+    query.bindValue(":s_ID", QString::fromStdString(sID));
     query.exec();
 }
 
+void SqlComputer::deleteComputer(std::string id){
 
+    QSqlQuery query;
+    QString qstr = "DELETE FROM Computer WHERE ID = " + QString::fromStdString(id);
+    query.exec(qstr);
+
+}

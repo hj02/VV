@@ -48,3 +48,10 @@ void ScienceService::connect(std::string sID, std::string cID){
     return sqlcomputer.connect(sID,cID);
 }
 
+void ScienceService::deleteComputer(std::string id){
+    sqlcomputer.deleteComputer(id);
+}
+
+void ScienceService::deleteScientist(std::string id){
+    sqlscientist.deleteScientist(id);
+}

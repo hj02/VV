@@ -121,3 +121,11 @@ void SqlScientist::openDatabase(){
     db.open();
 }
 
+void SqlScientist::deleteScientist(std::string id){
+
+    QSqlQuery query;
+    QString qstr = "DELETE FROM Scientist WHERE ID = " + QString::fromStdString(id);
+    query.exec(qstr);
+
+}
+

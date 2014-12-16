@@ -13,6 +13,8 @@ public:
     void addComputer(Computer c);
     std::list<Computer> searchComputer(std::string searchTerm);
     void connect(std::string scientist, std::string computer);
+    void deleteComputer(std::string id);
+
 
 };
 #endif // SQLCOMPUTER_H
