@@ -26,7 +26,7 @@ void MainWindow::start()
 }
 
 
-void MainWindow::on_rbAliveS_clicked()
+void MainWindow::on_cbAliveS_clicked()
 {
   if(ui->cbAliveS->isChecked())
     ui->edtDodS->setEnabled(false);
@@ -66,13 +66,13 @@ void MainWindow::on_pbAddS_clicked()
     additionalScientist.dateOfDeath = DOD;
 
     std::string GENDER;
-    if(ui->rbFemaleS){
+    if(ui->rbFemaleS->isChecked()){
         GENDER = "female";
-    }else GENDER = "male";
+    }
 
-    if(ui->rbMaleS){
+    if(ui->rbMaleS->isChecked()){
         GENDER = "male";
-    }else GENDER = "female";
+    }
     additionalScientist.gender=GENDER;
 
     if(NAME==""){
@@ -93,6 +93,9 @@ void MainWindow::on_pbAddS_clicked()
           ui->edtDobS->clear();
           ui->edtDodS->clear();
           ui->statusBar->clearMessage();
+          ui->comboBox_SID->clear();
+          on_rb_removeS_pressed();
+          fillComboBox();
     }
 }
 
@@ -149,6 +152,9 @@ void MainWindow::on_pbAddC_clicked()
           ui->edtType->clear();
           ui->edtYear->clear();
           ui->statusBar->clearMessage();
+          ui->comboBox_CID->clear();
+          on_rb_removeS_pressed();
+          fillComboBox();
     }
 }
 
@@ -499,6 +505,7 @@ void MainWindow::on_removebutton_clicked()
     }while(!isspace(str[i]));
 
     scienceService.deleteComputer(id);
+    scienceService.deleteconnectionC(id);
     on_rb_removeC_pressed();
     ui->statusBar->showMessage("Computer has been removed");
 
@@ -513,6 +520,7 @@ void MainWindow::on_removebutton_clicked()
         i++;
         }while(!isspace(str[i]));
         scienceService.deleteScientist(id);
+        scienceService.deleteconnectionS(id);
         on_rb_removeS_pressed();
         ui->statusBar->showMessage("Scientist has been removed");
      }
@@ -546,6 +554,7 @@ void MainWindow::on_connectbutton_clicked()
     ui->lblScientist_no1->setText(QString::fromStdString(idS));
     ui->lblComputer_no1->setText(QString::fromStdString(idC));
     ui->statusBar->showMessage("Connection succesful");
+    fillComboBox2();
 }
 
 void MainWindow::on_showconnection_clicked()
@@ -609,7 +618,7 @@ void MainWindow::on_remove2button_clicked()
 
 void MainWindow::fillComboBox2(){
 
-
+        ui->comboBox2_Remove->clear();
         std::list<Computer> c = scienceService.showconnection();
 
         for(std::list<Computer>::iterator iter = c.begin(); iter != c.end(); iter ++){
@@ -665,10 +674,19 @@ void MainWindow::on_btnClear_clicked()
     ui->cbBuilt->setChecked(false);
     ui->TxtSearchTerm->clear();
     ui->statusBar->clearMessage();
+    ui->tableComputer->clear();
+    ui->tableScientist->clear();
+    ui->tableWidgetConnect->clear();
+    ui->SearchShowlist->clear();
 }
 
 void MainWindow::on_pushButton_clicked()
 {
     window()->show();
     this->close();
+}
+
+void MainWindow::on_btnClearFind_clicked()
+{
+    ui->TxtSearchTerm->clear();
 }
