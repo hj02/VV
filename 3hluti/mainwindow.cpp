@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "scienceservice.h"
 #include <QStatusBar>
+#include <QMenuBar>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -27,7 +28,7 @@ void MainWindow::start()
 
 void MainWindow::on_rbAliveS_clicked()
 {
-  if(ui->rbAliveS->isChecked())
+  if(ui->cbAliveS->isChecked())
     ui->edtDodS->setEnabled(false);
   else ui->edtDodS->setEnabled(true);
 }
@@ -40,8 +41,7 @@ void MainWindow::on_pbAddS_clicked()
     std::string format2= "";
     QString strformat(format.c_str());
     QString strformat2(format2.c_str());
-    ui->errormsgS->setText(strformat);
-    ui->errormsg2S->setText(strformat2);
+    ui->statusBar->showMessage(strformat+ "  "+strformat2);
 
     std::string NAME = "";
     NAME = ui->edtNameS->text().toStdString();
@@ -54,7 +54,7 @@ void MainWindow::on_pbAddS_clicked()
     additionalScientist.dateOfBirth = DOB;
 
     std::string DOD = "";
-    if(ui->rbAliveS->isChecked()){
+    if(ui->cbAliveS->isChecked()){
 
         DOD="Alive";
 
@@ -76,26 +76,23 @@ void MainWindow::on_pbAddS_clicked()
     additionalScientist.gender=GENDER;
 
     if(NAME==""){
-        format = "Please insert the name.";
+        format = "Please insert the name";
         QString strformat(format.c_str());
-        ui->errormsgS->setText(strformat);
+        ui->statusBar->showMessage(strformat);
     }else if(!dateTrue(DOB) || (!dateTrue(DOD) && DOD!="Alive")){
 
-        format = "The format of date must be:";
-        format2 = "yyyy-mm-dd";
+        format = "The format of date must be: ";
+        format2 = " yyyy-mm-dd";
         QString strformat(format.c_str());
         QString strformat2(format2.c_str());
-        ui->errormsgS->setText(strformat);
-        ui->errormsg2S->setText(strformat2);
+        ui->statusBar->showMessage(strformat+strformat2);
 
     }else{
           scienceService.addScientist(additionalScientist);
           ui->edtNameS->clear();
           ui->edtDobS->clear();
           ui->edtDodS->clear();
-          ui->errormsgS->clear();
-          ui->errormsg2S->clear();
-
+          ui->statusBar->clearMessage();
     }
 }
 
@@ -104,7 +101,7 @@ void MainWindow::on_pbAddC_clicked()
     Computer additionalComputer = Computer();
     std::string format = "";
     QString strformat(format.c_str());
-    ui->errormsgC->setText(strformat);
+    ui->statusBar->showMessage(strformat);
 
     std::string BRAND = "";
     BRAND = ui->edtBrand->text().toStdString();
@@ -124,38 +121,36 @@ void MainWindow::on_pbAddC_clicked()
 
     std::string BUILT;
 
-    if(ui->checkBox_2){
+    if(ui->cbBuilt){
     BUILT = "Yes";
     }else BUILT = "No";
     additionalComputer.built = BUILT;
 
     if(BRAND==""){
-        format = "Please insert the brand.";
+        format = "Please insert the brand";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
+
     }else if(TYPE==""){
 
-        format = "Please insert the type.";
+        format = "Please insert the type";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
 
     }else if(!yearTrue(YEAR)){
 
         format = "The format of year must be yyyy";
         QString strformat(format.c_str());
-        ui->errormsgC->setText(strformat);
+        ui->statusBar->showMessage(strformat);
 
     }else{
           scienceService.addComputer(additionalComputer);
           ui->edtBrand->clear();
           ui->edtType->clear();
           ui->edtYear->clear();
-          ui->errormsgC->clear();
-
+          ui->statusBar->clearMessage();
     }
 }
-
-
 
 void MainWindow::on_Searchbutton_clicked()
 {
@@ -300,7 +295,6 @@ void MainWindow::on_pbSortS_clicked()
         ui->tableScientist->setItem(currentRow, 2, new QTableWidgetItem(dob));
         ui->tableScientist->setItem(currentRow, 3, new QTableWidgetItem(dod));
         currentRow++;
-
     }
 }
 
@@ -506,6 +500,8 @@ void MainWindow::on_removebutton_clicked()
 
     scienceService.deleteComputer(id);
     on_rb_removeC_pressed();
+    ui->statusBar->showMessage("Computer has been removed");
+
     }
     if(ui->rb_removeS->isChecked()){
         QString qstr = ui->comboBox_remove->currentText();
@@ -518,13 +514,12 @@ void MainWindow::on_removebutton_clicked()
         }while(!isspace(str[i]));
         scienceService.deleteScientist(id);
         on_rb_removeS_pressed();
+        ui->statusBar->showMessage("Scientist has been removed");
      }
 }
 
 void MainWindow::on_connectbutton_clicked()
 {
-
-
     QString qstrS = ui->comboBox_SID->currentText();
     std::string strS = qstrS.toStdString();
 
@@ -550,12 +545,15 @@ void MainWindow::on_connectbutton_clicked()
 
     ui->lblScientist_no1->setText(QString::fromStdString(idS));
     ui->lblComputer_no1->setText(QString::fromStdString(idC));
+    ui->statusBar->showMessage("Connection succesful");
 }
 
 void MainWindow::on_showconnection_clicked()
 {
 
     std::list<Computer> s = scienceService.showconnection();
+
+    ui->statusBar->showMessage("List of connections");
 
     int rowSize = s.size();
     ui->tableWidgetConnect->setRowCount(rowSize);
@@ -624,4 +622,53 @@ void MainWindow::fillComboBox2(){
             QString sum = sID + " " + name + " - " + cID + " " + brand;
             ui->comboBox2_Remove->addItem(sum);
         }
+}
+
+void MainWindow::on_tbFind_tabBarClicked(int index)
+{
+    if(index==1){
+
+        ui->statusBar->clearMessage();
+        ui->edtNameS->clear();
+        ui->edtDobS->clear();
+        ui->edtDodS->clear();
+        ui->cbAliveS->setChecked(false);
+    }
+    else if(index==2){
+
+        ui->statusBar->clearMessage();
+        ui->edtBrand->clear();
+        ui->edtType->clear();
+        ui->edtYear->clear();
+    }
+    else if(index==3){
+
+        ui->statusBar->clearMessage();
+    }
+    else if(index==4){
+
+        ui->statusBar->clearMessage();
+        ui->TxtSearchTerm->clear();
+    }
+    else ui->statusBar->clearMessage();
+}
+
+void MainWindow::on_btnClear_clicked()
+{
+    ui->edtNameS->clear();
+    ui->edtDobS->clear();
+    ui->edtDodS->clear();
+    ui->cbAliveS->setChecked(false);
+    ui->edtBrand->clear();
+    ui->edtType->clear();
+    ui->edtYear->clear();
+    ui->cbBuilt->setChecked(false);
+    ui->TxtSearchTerm->clear();
+    ui->statusBar->clearMessage();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    window()->show();
+    this->close();
 }

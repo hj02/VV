@@ -44,6 +44,12 @@ private slots:
     void on_showconnection_clicked();
     void on_remove2button_clicked();
     void fillComboBox2();
+    void on_btnClear_clicked();
+    void on_tbFind_tabBarClicked(int index);
+
+    void on_label_2_linkActivated(const QString &link);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

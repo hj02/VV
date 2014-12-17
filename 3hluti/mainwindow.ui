@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>620</width>
+    <width>600</width>
     <height>620</height>
    </rect>
   </property>
@@ -14,17 +14,17 @@
    <string>SCIENTISTS &amp; COMPUTERS</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="tbFind">
+   <widget class="QTabWidget" name="tabsMain">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
-      <width>581</width>
+      <width>600</width>
       <height>561</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>6</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -83,7 +83,7 @@
        <rect>
         <x>80</x>
         <y>40</y>
-        <width>251</width>
+        <width>280</width>
         <height>22</height>
        </rect>
       </property>
@@ -94,7 +94,7 @@
      <widget class="QPushButton" name="pbAddS">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>270</x>
         <y>130</y>
         <width>93</width>
         <height>28</height>
@@ -122,7 +122,7 @@
          <x>10</x>
          <y>30</y>
          <width>181</width>
-         <height>22</height>
+         <height>28</height>
         </rect>
        </property>
        <item>
@@ -258,7 +258,7 @@
       <widget class="QRadioButton" name="rbMaleS">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>280</x>
          <y>60</y>
          <width>60</width>
          <height>20</height>
@@ -274,20 +274,7 @@
         <string>Male</string>
        </property>
       </widget>
-      <widget class="QLabel" name="errormsgS">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>171</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="rbAliveS">
+      <widget class="QCheckBox" name="cbAliveS">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -304,19 +291,6 @@
        </property>
        <property name="text">
         <string>Alive</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="errormsg2S">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>130</y>
-         <width>151</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </widget>
@@ -392,7 +366,7 @@
        <rect>
         <x>80</x>
         <y>40</y>
-        <width>251</width>
+        <width>280</width>
         <height>22</height>
        </rect>
       </property>
@@ -425,15 +399,15 @@
        <rect>
         <x>80</x>
         <y>70</y>
-        <width>251</width>
+        <width>280</width>
         <height>22</height>
        </rect>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_2">
+     <widget class="QCheckBox" name="cbBuilt">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>210</x>
         <y>100</y>
         <width>81</width>
         <height>20</height>
@@ -462,7 +436,7 @@
      <widget class="QPushButton" name="pbAddC">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>270</x>
         <y>130</y>
         <width>93</width>
         <height>28</height>
@@ -490,7 +464,7 @@
          <x>10</x>
          <y>30</y>
          <width>181</width>
-         <height>22</height>
+         <height>28</height>
         </rect>
        </property>
        <item>
@@ -575,17 +549,24 @@
       <property name="title">
        <string>Add a new Computer</string>
       </property>
-      <widget class="QLabel" name="errormsgC">
+      <widget class="QPushButton" name="btnClearComputer">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>201</width>
-         <height>20</height>
+         <x>370</x>
+         <y>530</y>
+         <width>93</width>
+         <height>28</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+         <underline>false</underline>
+        </font>
+       </property>
        <property name="text">
-        <string/>
+        <string>Clear</string>
        </property>
       </widget>
      </widget>
@@ -640,7 +621,7 @@
      <zorder>lblType</zorder>
      <zorder>edtYear</zorder>
      <zorder>edtType</zorder>
-     <zorder>checkBox_2</zorder>
+     <zorder>cbBuilt</zorder>
      <zorder>lblYear</zorder>
      <zorder>pbAddC</zorder>
      <zorder>grpSortC</zorder>
@@ -650,83 +631,12 @@
      <attribute name="title">
       <string>Connect</string>
      </attribute>
-     <widget class="QLabel" name="lblConnectSwithC">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>300</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Connect a Scientist with a Computer</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="connectbutton">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>110</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Connect</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblComputern_no1">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>150</y>
-        <width>111</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>with Computer no: </string>
-      </property>
-     </widget>
      <widget class="QLabel" name="lblScientist_connect">
       <property name="geometry">
        <rect>
         <x>240</x>
         <y>170</y>
         <width>21</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblScientistComputer">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>150</y>
-        <width>221</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>You have now connected Scientist no: </string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblComputer_no1">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>150</y>
-        <width>30</width>
         <height>16</height>
        </rect>
       </property>
@@ -745,77 +655,6 @@
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblScientist_no1">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>150</y>
-        <width>30</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox_SID">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>70</y>
-        <width>261</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox_CID">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>110</y>
-        <width>261</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Choose a scientist:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>110</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Choose a computer:</string>
       </property>
      </widget>
      <widget class="QTableWidget" name="tableWidgetConnect">
@@ -860,21 +699,211 @@
        </property>
       </column>
      </widget>
-     <widget class="QPushButton" name="showconnection">
+     <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>20</y>
-        <width>121</width>
-        <height>23</height>
+        <x>20</x>
+        <y>15</y>
+        <width>560</width>
+        <height>160</height>
        </rect>
       </property>
-      <property name="text">
-       <string>Show connection</string>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
+      <property name="title">
+       <string>Connect a Scientist with a Computer</string>
+      </property>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>120</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Choose a scientist:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>120</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Choose a computer:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="connectbutton">
+       <property name="geometry">
+        <rect>
+         <x>455</x>
+         <y>70</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblScientistComputer">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>221</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>You have now connected Scientist no: </string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_SID">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>30</y>
+         <width>300</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblComputer_no1">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>120</y>
+         <width>30</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblComputern_no1">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>120</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>with Computer no: </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="showconnection">
+       <property name="geometry">
+        <rect>
+         <x>455</x>
+         <y>30</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>List</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblScientist_no1">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>120</y>
+         <width>30</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_CID">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>70</y>
+         <width>300</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="tabFind">
      <attribute name="title">
       <string>Find</string>
      </attribute>
@@ -882,9 +911,9 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>70</y>
-        <width>80</width>
-        <height>16</height>
+        <y>95</y>
+        <width>85</width>
+        <height>28</height>
        </rect>
       </property>
       <property name="text">
@@ -894,10 +923,10 @@
      <widget class="QLineEdit" name="TxtSearchTerm">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>70</y>
-        <width>300</width>
-        <height>22</height>
+        <x>120</x>
+        <y>95</y>
+        <width>450</width>
+        <height>28</height>
        </rect>
       </property>
      </widget>
@@ -907,43 +936,32 @@
         <x>20</x>
         <y>20</y>
         <width>561</width>
-        <height>151</height>
+        <height>161</height>
        </rect>
       </property>
-      <property name="title">
-       <string/>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-      <widget class="QLabel" name="lblHeader">
+      <property name="title">
+       <string>Find a Scientist or a Computer</string>
+      </property>
+      <widget class="QRadioButton" name="radioBScientist">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>561</width>
-         <height>16</height>
+         <x>100</x>
+         <y>40</y>
+         <width>95</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>8</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
-       </property>
-       <property name="text">
-        <string>Find a Scientist or a Computer</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioBScientist">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>100</y>
-         <width>95</width>
-         <height>20</height>
-        </rect>
        </property>
        <property name="text">
         <string>Scientist</string>
@@ -955,11 +973,17 @@
       <widget class="QRadioButton" name="radioBComputer">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>100</y>
+         <x>240</x>
+         <y>40</y>
          <width>95</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="text">
         <string>Computer</string>
@@ -968,11 +992,17 @@
       <widget class="QPushButton" name="Searchbutton">
        <property name="geometry">
         <rect>
-         <x>414</x>
-         <y>100</y>
+         <x>460</x>
+         <y>120</y>
          <width>91</width>
-         <height>31</height>
+         <height>28</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="text">
         <string>Search</string>
@@ -989,6 +1019,25 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnClearFind">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>120</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Clear</string>
        </property>
       </widget>
      </widget>
@@ -1045,69 +1094,17 @@
      <zorder>TxtSearchTerm</zorder>
      <zorder>SearchShowlist</zorder>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="tabRemove">
      <attribute name="title">
-      <string>Page</string>
+      <string>Remove</string>
      </attribute>
-     <widget class="QComboBox" name="comboBox_remove">
+     <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>80</y>
-        <width>321</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="rb_removeS">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>50</y>
-        <width>82</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Scientist</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="rb_removeC">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>50</y>
-        <width>82</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Computer</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="removebutton">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>80</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Remove</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>201</width>
-        <height>16</height>
+        <y>30</y>
+        <width>555</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="font">
@@ -1116,123 +1113,391 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="title">
+       <string>Remove a Scientist or a Computer</string>
+      </property>
+      <widget class="QComboBox" name="comboBox_remove">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>400</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_removeS">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>40</y>
+         <width>90</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Scientist</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_removeC">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>40</y>
+         <width>90</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Computer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="removebutton">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>80</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+      <zorder>comboBox_remove</zorder>
+      <zorder>rb_removeS</zorder>
+      <zorder>rb_removeC</zorder>
+      <zorder>removebutton</zorder>
+      <zorder>removebutton</zorder>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>555</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>Remove a Connection between a Scientist and a Computer</string>
+      </property>
+      <widget class="QPushButton" name="remove2button">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>80</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox2_Remove">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>400</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabAbout">
+     <attribute name="title">
+      <string>About</string>
+     </attribute>
+     <widget class="QLabel" name="lblAbout">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>140</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Remove scientist or computer:</string>
+       <string>This program was programmed and designed by</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblAbout_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>170</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>1st year students in Computer Science in the</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblAbout_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>200</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>University of Reykjavík</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>311</width>
-        <height>16</height>
+        <x>50</x>
+        <y>250</y>
+        <width>500</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
        </font>
       </property>
       <property name="text">
-       <string>Remove connection between scientist and computer</string>
+       <string>Agnes Jóhannesdóttir</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox2_Remove">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>140</y>
-        <width>321</width>
-        <height>22</height>
+        <x>50</x>
+        <y>280</y>
+        <width>500</width>
+        <height>30</height>
        </rect>
       </property>
-     </widget>
-     <widget class="QPushButton" name="remove2button">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>140</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
       </property>
       <property name="text">
-       <string>Remove</string>
+       <string>Elín Rós Hauksdóttir</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>340</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Hugo Pétur Porter</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>310</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Halldóra Jóhannsdóttir</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabHelp">
+     <attribute name="title">
+      <string>Help</string>
+     </attribute>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>25</y>
+        <width>500</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To Add a Scientist, click to the Scientist tab.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To Add a Computer, click to the Computers tab.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To Connect a Scientist with a Computer, click to the Connect tab.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To Find a Scientist or a Computer, click the Find tab.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To Remove a Scientist, Computer or a Connection between a Scientist and a Computer, click the Remove tab.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;To get information About who made this program, click the About tab.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>620</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>565</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
     </property>
-    <widget class="QMenu" name="menuNew">
-     <property name="title">
-      <string>New</string>
-     </property>
-     <addaction name="actionScientist"/>
-     <addaction name="actionComputer"/>
-     <addaction name="actionConnection"/>
-    </widget>
-    <widget class="QMenu" name="menuFind">
-     <property name="title">
-      <string>Find</string>
-     </property>
-     <widget class="QMenu" name="menuScientist">
-      <property name="title">
-       <string>Scientist</string>
-      </property>
-      <addaction name="actionBy_name"/>
-     </widget>
-     <addaction name="menuScientist"/>
-     <addaction name="actionComputer_2"/>
-    </widget>
-    <addaction name="menuNew"/>
-    <addaction name="menuFind"/>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
+    <property name="text">
+     <string>Quit</string>
     </property>
-    <addaction name="actionAbout"/>
    </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuHelp"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
+   <widget class="QPushButton" name="btnClear">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>565</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionScientist">
    <property name="text">
     <string>Scientist</string>
    </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
+   </property>
   </action>
   <action name="actionComputer">
    <property name="text">
     <string>Computer</string>
    </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
   </action>
   <action name="actionConnection">
    <property name="text">
     <string>Connection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+O</string>
    </property>
   </action>
   <action name="actionComputer_2">
@@ -1255,10 +1520,26 @@
     <string>About</string>
    </property>
   </action>
+  <action name="actionConnect">
+   <property name="text">
+    <string>Connect</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tbFind</tabstop>
+  <tabstop>tabsMain</tabstop>
   <tabstop>edtNameS</tabstop>
   <tabstop>edtDobS</tabstop>
   <tabstop>edtDodS</tabstop>
@@ -1272,7 +1553,7 @@
   <tabstop>edtBrand</tabstop>
   <tabstop>edtType</tabstop>
   <tabstop>edtYear</tabstop>
-  <tabstop>checkBox_2</tabstop>
+  <tabstop>cbBuilt</tabstop>
   <tabstop>pbAddC</tabstop>
   <tabstop>cmbComputers</tabstop>
   <tabstop>rbAscC</tabstop>
