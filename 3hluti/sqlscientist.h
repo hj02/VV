@@ -14,6 +14,7 @@ public:
     std::list<Scientist> searchScientist(std::string searchTerm);
     void openDatabase();
     void deleteScientist(std::string id);
+    void deleteconnectionS(std::string id);
 };
 #endif // SQLSCIENTIST_H
 

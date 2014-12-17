@@ -55,3 +55,22 @@ void ScienceService::deleteComputer(std::string id){
 void ScienceService::deleteScientist(std::string id){
     sqlscientist.deleteScientist(id);
 }
+std::list<Computer> ScienceService::showconnection(){
+    return sqlcomputer.showconnection();
+}
+
+
+
+void ScienceService::deleteconnectionS(std::string id){
+    sqlscientist.deleteconnectionS(id);
+}
+
+void ScienceService::deleteconnectionC(std::string id){
+    sqlcomputer.deleteconnectionC(id);
+}
+
+void ScienceService::deleteconnection(std::string cid ,std::string sid){
+
+    sqlcomputer.deleteconnection(cid, sid);
+}
+

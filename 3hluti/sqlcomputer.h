@@ -15,6 +15,8 @@ public:
     void connect(std::string scientist, std::string computer);
     void deleteComputer(std::string id);
     std::list<Computer> showconnection();
+    void deleteconnectionC(std::string id);
+    void deleteconnection(std::string cid, std::string sid);
 
 
 };

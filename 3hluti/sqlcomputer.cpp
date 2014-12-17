@@ -155,3 +155,20 @@ std::list<Computer> SqlComputer::showconnection(){
 
     return scientistandcomputer;
 }
+
+
+
+void SqlComputer::deleteconnection(std::string cid, std::string sid){
+
+    QSqlQuery query;
+    QString qstr = "DELETE FROM Makers WHERE c_ID = "+ QString::fromStdString(cid) + " AND s_ID = " + QString::fromStdString(sid);
+    query.exec(qstr);
+}
+
+void SqlComputer::deleteconnectionC(std::string id){
+
+    QSqlQuery query;
+    QString qstr = "DELETE FROM Makers WHERE c_ID = " + QString::fromStdString(id);
+    query.exec(qstr);
+
+}

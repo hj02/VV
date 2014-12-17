@@ -129,3 +129,11 @@ void SqlScientist::deleteScientist(std::string id){
 
 }
 
+
+void SqlScientist::deleteconnectionS(std::string id){
+
+    QSqlQuery query;
+    QString qstr = "DELETE FROM Makers WHERE s_ID = " + QString::fromStdString(id);
+    query.exec(qstr);
+
+}

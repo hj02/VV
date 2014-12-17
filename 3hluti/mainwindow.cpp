@@ -20,6 +20,7 @@ void MainWindow::start()
 {
     scienceService.open();
     fillComboBox();
+    fillComboBox2();
     on_rb_removeS_pressed();
 }
 
@@ -174,6 +175,7 @@ void MainWindow::on_Searchbutton_clicked()
         int rowSize = s.size();
         ui->SearchShowlist->setRowCount(rowSize);
         ui->SearchShowlist->setColumnCount(4);
+        ui->SearchShowlist->verticalHeader()->setVisible(false);
 
         if(s.size() > 0) {
             int currentRow = 0;
@@ -210,6 +212,7 @@ void MainWindow::on_Searchbutton_clicked()
         int rowSize = s.size();
         ui->SearchShowlist->setRowCount(rowSize);
         ui->SearchShowlist->setColumnCount(4);
+        ui->SearchShowlist->verticalHeader()->setVisible(false);
 
         if(s.size() > 0) {
             int currentRow = 0;
@@ -280,6 +283,7 @@ void MainWindow::on_pbSortS_clicked()
     int rowSize = s.size();
     ui->tableScientist->setRowCount(rowSize);
     ui->tableScientist->setColumnCount(4);
+    ui->tableScientist->verticalHeader()->setVisible(false);
 
 
     int currentRow = 0;
@@ -339,6 +343,7 @@ void MainWindow::on_pbSortC_clicked()
     int rowSize = c.size();
     ui->tableComputer->setRowCount(rowSize);
     ui->tableComputer->setColumnCount(4);
+    ui->tableComputer->verticalHeader()->setVisible(false);
 
 
     int currentRow = 0;
@@ -545,4 +550,78 @@ void MainWindow::on_connectbutton_clicked()
 
     ui->lblScientist_no1->setText(QString::fromStdString(idS));
     ui->lblComputer_no1->setText(QString::fromStdString(idC));
+}
+
+void MainWindow::on_showconnection_clicked()
+{
+
+    std::list<Computer> s = scienceService.showconnection();
+
+    int rowSize = s.size();
+    ui->tableWidgetConnect->setRowCount(rowSize);
+    ui->tableWidgetConnect->setColumnCount(4);
+    ui->tableWidgetConnect->verticalHeader()->setVisible(false);
+    if(s.size() > 0) {
+        int currentRow = 0;
+
+         for(std::list<Computer>::iterator iter = s.begin(); iter != s.end(); iter ++){
+
+             QString brand = QString::fromStdString(iter->brand);
+             QString CID = QString::number(iter->cID);
+             QString SID = QString::number(iter->sID);
+             QString name = QString::fromStdString(iter->name);
+
+             ui->tableWidgetConnect->setItem(currentRow, 0, new QTableWidgetItem(SID));
+             ui->tableWidgetConnect->setItem(currentRow, 1, new QTableWidgetItem(name));
+             ui->tableWidgetConnect->setItem(currentRow, 2, new QTableWidgetItem(CID));
+             ui->tableWidgetConnect->setItem(currentRow, 3, new QTableWidgetItem(brand));
+             currentRow++;
+          }
+     }
+}
+
+
+void MainWindow::on_remove2button_clicked()
+{
+
+    QString qstr = ui->comboBox2_Remove->currentText();
+    std::string str = qstr.toStdString();
+    std::string sid ="";
+    int i=0;
+    do{
+       sid=sid+str[i];
+     i++;
+    }while(!isspace(str[i]));
+
+        std::string cid ="";
+        while(str[i]!='-'){
+        i++;
+        }
+        i++;
+        do{
+           cid=cid+str[i];
+        i++;
+        }while(!isspace(str[i]));
+
+        scienceService.deleteconnection(cid, sid);
+        ui->comboBox2_Remove->clear();
+        fillComboBox2();
+}
+
+
+void MainWindow::fillComboBox2(){
+
+
+        std::list<Computer> c = scienceService.showconnection();
+
+        for(std::list<Computer>::iterator iter = c.begin(); iter != c.end(); iter ++){
+
+            QString sID = QString::number(iter->sID);
+            QString name = QString::fromStdString(iter->name);
+            QString cID = QString::number(iter->cID);
+            QString brand = QString::fromStdString(iter->brand);
+
+            QString sum = sID + " " + name + " - " + cID + " " + brand;
+            ui->comboBox2_Remove->addItem(sum);
+        }
 }

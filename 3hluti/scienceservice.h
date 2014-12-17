@@ -22,12 +22,18 @@ public:
     // Orders the list
     std::list<Computer> getComputersOrderedBy(std::string col , std::string mod);
     // Orders the list
+    std::list<Computer> showconnection();
+    void deleteComputer(std::string id);
+    void deleteScientist(std::string id);
+    void deleteconnectionS(std::string id);
+    void deleteconnectionC(std::string id);
+    void deleteconnection(std::string cid, std::string sid);
+
     void connect(std::string sID, std::string cID);
     // Connentes a computer and a scientist
     void open();
     // Opens database
-    void deleteComputer(std::string id);
-    void deleteScientist(std::string id);
+
 private:
     SqlScientist sqlscientist;
     SqlComputer sqlcomputer;
