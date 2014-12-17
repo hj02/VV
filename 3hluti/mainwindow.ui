@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -755,7 +755,7 @@
         <string>Choose a computer:</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="connectbutton">
+      <widget class="QPushButton" name="connectButton">
        <property name="geometry">
         <rect>
          <x>455</x>
@@ -847,7 +847,7 @@
         <string>with Computer no: </string>
        </property>
       </widget>
-      <widget class="QPushButton" name="showconnection">
+      <widget class="QPushButton" name="showConnection">
        <property name="geometry">
         <rect>
          <x>455</x>
@@ -989,7 +989,7 @@
         <string>Computer</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="Searchbutton">
+      <widget class="QPushButton" name="searchButton">
        <property name="geometry">
         <rect>
          <x>460</x>
@@ -1006,19 +1006,6 @@
        </property>
        <property name="text">
         <string>Search</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="prufasearch">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>73</y>
-         <width>151</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
       <widget class="QPushButton" name="btnClearFind">
@@ -1040,6 +1027,11 @@
         <string>Clear</string>
        </property>
       </widget>
+      <zorder>radioBScientist</zorder>
+      <zorder>radioBComputer</zorder>
+      <zorder>searchButton</zorder>
+      <zorder>btnClearFind</zorder>
+      <zorder>TxtSearchTerm</zorder>
      </widget>
      <widget class="QTableWidget" name="SearchShowlist">
       <property name="enabled">
@@ -1132,7 +1124,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QRadioButton" name="rb_removeS">
+      <widget class="QRadioButton" name="rbRemoveS">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -1154,7 +1146,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QRadioButton" name="rb_removeC">
+      <widget class="QRadioButton" name="rbRemoveC">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -1437,7 +1429,7 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="quitButton">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -1467,6 +1459,19 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="errorfind">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>580</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

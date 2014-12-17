@@ -56,34 +56,7 @@ std::list<Scientist> SqlScientist::searchScientist(std::string searchTerm){
         }
 
         return scientist;
- /*
-        std::list<Scientist> scientistandcomputer = std::list<Scientist>();
-        query.prepare("select * from ScientistAndComputer where Name like :estr or Gender like :estr or Dob like :estr or Dod like :estr");
-        query.bindValue(":estr", QString::fromStdString(searchTerm));
-        query.exec();
-        Scientist s = Scientist();
 
-        while(query.next()){
-            s.sID = query.value("ID").toInt();
-            s.name = query.value("Name").toString().toStdString();
-            s.gender = query.value("Gender").toString().toStdString();
-            s.dateOfBirth =query.value("Dob").toString().toStdString();
-            s.dateOfDeath = query.value("Dod").toString().toStdString();
-
-            if(query.value("Brand") == ""){
-
-                s.brand = "No computer!";
-            }
-            else{
-
-                s.brand = query.value("Brand").toString().toStdString();
-            }
-
-            scientistandcomputer.push_back(s);
-        }
-
-        return scientistandcomputer;
-    }*/
 }
 
 std::list<Scientist> SqlScientist::list(std::string col, std::string mod){

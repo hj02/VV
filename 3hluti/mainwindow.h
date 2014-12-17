@@ -24,37 +24,35 @@ public:
 
 private slots:
 
+
     void on_cbAliveS_clicked();
     void on_pbAddS_clicked();
     void on_pbAddC_clicked();
-
-    void on_Searchbutton_clicked();
-    void on_TxtSearchTerm_returnPressed();
     void on_pbSortS_clicked();
     void on_pbSortC_clicked();
-    bool yearTrue(std::string year);
-    void firstToUpper(std::string& finding);
-    void toLower(std::string& str);
-    bool dateTrue(std::string date);
-    void fillComboBox();
-    void on_rb_removeC_pressed();
-    void on_rb_removeS_pressed();
+    void on_searchButton_clicked();
+    void on_TxtSearchTerm_returnPressed();
+    void on_connectButton_clicked();
+    void on_showConnection_clicked();
+    void on_rbRemoveC_pressed();
+    void on_rbRemoveS_pressed();
     void on_removebutton_clicked();
-    void on_connectbutton_clicked();
-    void on_showconnection_clicked();
-    void on_remove2button_clicked();
-    void fillComboBox2();
+    void on_remove2button_clicked(); 
     void on_btnClear_clicked();
     void on_tbFind_tabBarClicked(int index);
-//    void on_label_2_linkActivated(const QString &link);
-    void on_pushButton_clicked();
-
+    void on_quitButton_clicked();
     void on_btnClearFind_clicked();
 
 private:
     Ui::MainWindow *ui;
 
     ScienceService scienceService;
+    bool yearTrue(std::string year); // returns if the year is in right format
+    void firstToUpper(std::string& finding); // first character in every word goes to upper case
+    void toLower(std::string& str); // returns the string in lowercase
+    bool dateTrue(std::string date); // returns if the date is in the right format
+    void fillComboBox(); // fills out comboboxes in connect
+    void fillComboBox2(); //  fills out second combobox in remove
 };
 
 #endif // MAINWINDOW_H

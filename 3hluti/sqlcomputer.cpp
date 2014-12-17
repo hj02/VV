@@ -55,35 +55,7 @@ std::list<Computer> SqlComputer::searchComputer(std::string searchTerm){
             }
 
         return computer;
-    /*}
-    else{
-        std::list<Computer> scientistandcomputer = std::list<Computer>();
-        query.prepare("select * from ScientistAndComputer where Brand like :estr or Year like :estr or Type like :estr or Built like :estr");
-        query.bindValue(":estr", QString::fromStdString(searchTerm));
-        query.exec();
-        Computer t = Computer();
 
-        while(query.next()){
-
-            t.cID = query.value("ID").toInt();
-            t.brand = query.value("Brand").toString().toStdString();
-            t.year = query.value("Year").toString().toStdString();
-            t.type =query.value("Type").toString().toStdString();
-            t.built = query.value("Built").toString().toStdString();
-            t.name = query.value("Name").toString().toStdString();
-
-            if(query.value("Name") == ""){
-
-                t.name = "No Scientist!";
-             }
-            else{
-
-                t.name = query.value("Name").toString().toStdString();
-             }
-            scientistandcomputer.push_back(t);
-        }
-        return scientistandcomputer;
-    }*/
 }
 
 std::list<Computer> SqlComputer::list(std::string col, std::string mod){
